@@ -51,9 +51,6 @@ const Tab2: React.FC = () => {
         </IonFabButton>
       </IonFab>
       </IonContent>
-
-     
-
     </IonPage>
   );
 };
