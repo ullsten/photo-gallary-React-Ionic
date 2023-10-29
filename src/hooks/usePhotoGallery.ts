@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import { isPlatform } from '@ionic/react';
-
-
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
@@ -48,14 +46,27 @@ export function usePhotoGallery() {
 
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
     let base64Data: string;
-    // "hybrid" will detect Cordova or Capacitor;
     if (isPlatform('hybrid')) {
-      const file = await Filesystem.readFile({
-        path: photo.path!
-      });
-      base64Data = file.data;
+        const file = await Filesystem.readFile({
+            path: photo.path!
+        });
+        if (typeof file.data === 'string') {
+            base64Data = file.data;
+        } else {
+            // file.data is a Blob
+            base64Data = await new Promise<string>((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    resolve(reader.result as string);
+                };
+                reader.onerror = () => {
+                    reject(new Error('Failed to read Blob'));
+                };
+                reader.readAsDataURL(file.data as Blob);
+            });
+        }
     } else {
-      base64Data = await base64FromPath(photo.webPath!);
+        base64Data = await base64FromPath(photo.webPath!);
     }
     const savedFile = await Filesystem.writeFile({
       path: fileName,
