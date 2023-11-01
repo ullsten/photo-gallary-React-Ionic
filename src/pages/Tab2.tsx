@@ -24,10 +24,11 @@ const Tab2: React.FC = () => {
   const [photoToDelete, setPhotoToDelete] = useState<UserPhoto>();
 
   return (
-    <IonPage>
+    <div>
+      <IonPage>
       <IonHeader>
-        <IonToolbar>
-          <IonTitle>Photo Gallery</IonTitle>
+        <IonToolbar color="tertiary">
+          <IonTitle className='galleryTitle'>Photo Gallery</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -38,8 +39,8 @@ const Tab2: React.FC = () => {
         </IonHeader>
         {/* <ExploreContainer name="Tab 2 page" /> */}
         
-        <IonGrid>
-        <IonRow>
+        <IonGrid className='imgGrid'>
+        <IonRow className='imgRow'>
           {photos.map((photo, index) => (
             <IonCol size='6' key={photo.filepath}>
               <IonImg onClick={() => setPhotoToDelete(photo)} src={photo.webviewPath}></IonImg>
@@ -53,6 +54,10 @@ const Tab2: React.FC = () => {
         </IonFabButton>
       </IonFab>
       <IonActionSheet
+      className='deletePhoto'
+      header='Are you sure to delete photo?'
+      subHeader='there is no way back..'
+
       isOpen={!!photoToDelete}
       buttons={[
         {
@@ -76,6 +81,7 @@ const Tab2: React.FC = () => {
       ></IonActionSheet>
       </IonContent>
     </IonPage>
+    </div>
   );
 };
 

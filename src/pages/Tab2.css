@@ -1,0 +1,19 @@
+
+
+.imgGrid{
+background-color: blueviolet;
+border-radius: 20px;
+margin: 10px;
+};
+
+.imgRow{
+background-color: red;
+};
+
+.galleryTitle {
+  --color: blue;  
+}
+
+.deletePhoto .action-sheet-group{
+  background: rgb(189, 65, 85);
+}
