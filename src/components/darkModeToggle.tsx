@@ -54,7 +54,7 @@ function Example() {
 
   return (
     <>
-            <IonToggle checked={themeToggle} onIonChange={toggleChange} justify="space-between">
+            <IonToggle checked={themeToggle} onIonChange={toggleChange} justify=''>
               Dark Mode
             </IonToggle>
     </>

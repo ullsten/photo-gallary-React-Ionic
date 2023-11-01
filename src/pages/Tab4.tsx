@@ -1,5 +1,17 @@
 import React, {useState, useEffect} from 'react';
-import { IonContent, IonHeader, IonIcon, IonPage, IonText, IonTitle, IonToolbar, IonToggle } from '@ionic/react';
+import { 
+  IonContent, 
+  IonHeader, 
+  IonIcon, 
+  IonPage, 
+  IonText, 
+  IonTitle, 
+  IonToolbar, 
+  IonCard, 
+  IonCardContent, 
+  IonCardHeader, 
+  IonCardSubtitle, 
+  IonCardTitle } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab4.css';
 import { warning } from 'ionicons/icons';
@@ -9,8 +21,11 @@ const Tab1: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
-          <IonTitle className='text-3xl font-bold underline'>About</IonTitle>
+        <IonToolbar className='toolbarStyle' color=''>
+         <div>
+          <div><IonTitle className='text-3xl font-bold'>About</IonTitle></div>
+          {/* <div><DarkModeToggle></DarkModeToggle></div> */}
+         </div>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -19,17 +34,20 @@ const Tab1: React.FC = () => {
             <IonTitle size="large">Tab 4</IonTitle>
           </IonToolbar>
         </IonHeader>
-        {/* <ExploreContainer name="Tab 4 page" /> */}
-        <DarkModeToggle></DarkModeToggle>
-        <IonText color="dark" className='text-2xl'>
-              <h1>About</h1>
-              <p>IonicReact test project styled with TailwindCSS</p>
-        </IonText>
-
-        <IonText color="warning">
-          <IonIcon icon={warning}></IonIcon>
-          
-        </IonText>
+              <IonCard className='aboutCardStyle' color='medium'>
+                <img alt='Silhouette of mountains' src='https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?auto=format&fit=crop&q=80&w=1769&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'></img>
+                <IonCardHeader>
+                  <IonCardTitle>React/Ionic app by UllstenCode</IonCardTitle>
+                  <IonCardSubtitle>
+                    <p>Project is styled with TailwindCSS</p>
+                  </IonCardSubtitle>
+                </IonCardHeader>
+                <IonCardContent>
+                  <div className='text-'>
+                  I will add and test futures now and then.
+                  </div>
+                </IonCardContent>
+              </IonCard>
       </IonContent>
     </IonPage>
    

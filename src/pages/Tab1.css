@@ -1,7 +1,15 @@
-.table-container{
+.contentContainer{
+  background: lightblue;
+  /* height: 100%; */
+}
+
+.homeStyle{
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
-  /* height: 100%; */
+  height: 100%;
+}
+.homeStyle h1{
+  color: rgb(106, 197, 31);
 }
