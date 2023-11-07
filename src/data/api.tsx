@@ -11,7 +11,7 @@ const GetAllProducts = () => {
     quantity: string;
     price: number;
     categoryName: string;
-    image: src;
+    imageUrl: string;
   }
   const [data, setData] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);

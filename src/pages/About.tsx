@@ -17,7 +17,7 @@ import './About.css';
 import { warning } from 'ionicons/icons';
 import DarkModeToggle from '../components/darkModeToggle';
 
-const Tab1: React.FC = () => {
+const About: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -54,4 +54,4 @@ const Tab1: React.FC = () => {
   );
 };
 
-export default Tab1;
+export default About;

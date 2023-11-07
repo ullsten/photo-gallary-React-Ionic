@@ -19,7 +19,7 @@ import './Photos.css';
 import { usePhotoGallery, UserPhoto } from '../hooks/usePhotoGallery';
 import React,{useState} from 'react';
 
-const Tab2: React.FC = () => {
+const Photo: React.FC = () => {
   const {photos, takePhoto, deletePhoto} = usePhotoGallery();
   const [photoToDelete, setPhotoToDelete] = useState<UserPhoto>();
 
@@ -85,4 +85,4 @@ const Tab2: React.FC = () => {
   );
 };
 
-export default Tab2;
+export default Photo;

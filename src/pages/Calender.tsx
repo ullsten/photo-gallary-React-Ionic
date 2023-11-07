@@ -3,7 +3,7 @@ import ExploreContainer from '../components/ExploreContainer';
 import './Calender.css';
 import '../theme/variables.css';
 
-const Tab3: React.FC = () => {
+const Calender: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -27,4 +27,4 @@ const Tab3: React.FC = () => {
   );
 };
 
-export default Tab3;
+export default Calender;
