@@ -17,7 +17,7 @@ const GetAllProducts = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
- const GET_ALL_PRODUCTS = "https://localhost:7157/api/Product/GetAllProductsWithCategory";
+ const GET_ALL_PRODUCTS = "https://localhost:7066/api/Product/GetAllProductsWithCategory";
 
  useEffect(() => {
   const fetchData = async () => {
